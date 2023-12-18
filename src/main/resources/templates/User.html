@@ -311,70 +311,19 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <l
                 <li class="sub-menu">
                     <a href="javascript:;" class="">
-                        <i class="fa fa-users"></i>
+                        <i class="icon_desktop"></i>
                         <span>People</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" th:href="@{/employees}">Employee</a></li>
-                        <li><a class="" th:href="@{/clients}">Clients</a></li>
-                        <li><a class="" th:href="@{/suppliers}">Suppliers</a></li>
-                        <li><a class="" th:href="@{/contacts}">Contacts</a></li>
-                        <li><a class="" th:href="@{/users}">Users</a></li>
+                        <li><a class="" th:href="@{/task}">Task</a></li>
+                        <li><a class="" th:href="@{/roles}">Role</a></li>
+                        <li><a class="" th:href="@{/users}">User</a></li>
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_piechart"></i>
-                        <span>HR Settings</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" th:href="@{/jobTitles}">Job Titles</a></li>
-                        <li><a class="" th:href="@{/employeeTypes}">Employee Type</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="fa fa-usd"></i>
-                        <span>Accounts</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" th:href="@{/invoices}">Invoices</a></li>
-                        <li><a class="" th:href="@{/invoiceStatuses}">Invoice Status Values</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_globe"></i>
-                        <span>Globals</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" th:href="@{/countries}">Countries</a></li>
-                        <li><a class="" th:href="@{/states}">States</a></li>
-                        <li><a class="" th:href="@{/locations}">Locations</a></li>
-                    </ul>
-                </li>
-
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_book"></i>
-                        <span>Reports</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" th:href="@{/blank}">Vehicle Reports</a></li>
-                        <li><a class="" th:href="@{/blank}">Employee Reports</a></li>
-                        <li><a class="" th:href="@{/blank}">Accounts Reports</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+                            </ul>
             <!-- sidebar menu end-->
         </div>
     </aside>
@@ -455,7 +404,7 @@
         <div class="modal-dialog modal-lg" role="document" style="width:70%">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New Client Record</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">New User Record</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -499,30 +448,7 @@
                                     </div>
                                 </td>
                                 <td width="50%" style="padding-left:10px">
-                                    <div class="form-group row">
-                                        <label for="ddlStateAdd" class="col-sm-4 col-form-label">State/Province: </label>
-                                        <div class="col-sm-6">
-                                            <select class="form-control" id="ddlStateAdd" name="stateid">
-                                                <option>-SELECT-</option>
-                                                <option th:each="state : ${states}"
-                                                        th:value="${state.id}"
-                                                        th:text="${state.name}">
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="ddlCountryAdd" class="col-sm-4 col-form-label">Country: </label>
-                                        <div class="col-sm-6">
-                                            <select class="form-control" id="ddlCountryAdd" name="countryid">
-                                                <option>-SELECT-</option>
-                                                <option th:each="country : ${countries}"
-                                                        th:value="${country.id}"
-                                                        th:text="${country.description}">
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group row">
                                         <label for="txtCityAdd" class="col-sm-4 col-form-label">City: </label>
                                         <div class="col-sm-6">
@@ -608,57 +534,6 @@
                                         <label for="txtAddressEdit" class="col-sm-4 col-form-label">Address</label>
                                         <div class="col-sm-6">
                                             <textarea class="form-control" id="txtAddressEdit" name="address" placeholder="Address" rows="2"></textarea>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td width="50%" style="padding-left:10px">
-                                    <div class="form-group row">
-                                        <label for="ddlStateEdit" class="col-sm-4 col-form-label">State/Province: </label>
-                                        <div class="col-sm-6">
-                                            <select class="form-control" id="ddlStateEdit" name="stateid">
-                                                <option>-SELECT-</option>
-                                                <option th:each="state : ${states}"
-                                                        th:value="${state.id}"
-                                                        th:text="${state.name}">
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="ddlCountryEdit" class="col-sm-4 col-form-label">Country: </label>
-                                        <div class="col-sm-6">
-                                            <select class="form-control" id="ddlCountryEdit" name="countryid">
-                                                <option>-SELECT-</option>
-                                                <option th:each="country : ${countries}"
-                                                        th:value="${country.id}"
-                                                        th:text="${country.description}">
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="txtCityEdit" class="col-sm-4 col-form-label">City: </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="txtCityEdit" name="city" placeholder="City">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="txtPhoneEdit" class="col-sm-4 col-form-label">Phone: </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="txtPhoneEdit" name="phone" placeholder="Phone">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="txtMobileEdit" class="col-sm-4 col-form-label">Mobile: </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="txtMobileEdit" name="mobile" placeholder="Mobile">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="txtEmailEdit" class="col-sm-4 col-form-label">Email</label>
-                                        <div class="col-sm-6">
-                                            <input type="email" class="form-control" id="txtEmailEdit" name="email" placeholder="Email">
                                         </div>
                                     </div>
                                 </td>

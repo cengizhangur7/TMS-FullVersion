@@ -7,9 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TaskRepository extends JpaRepository<Task,Long> {
-    List<Task> findByAssignedUserAndTaskName(Long id, String name);
-
-
-
+public interface TaskRepository extends JpaRepository<Task, Long> {
+    // Additional query methods can be added if needed
 }
+

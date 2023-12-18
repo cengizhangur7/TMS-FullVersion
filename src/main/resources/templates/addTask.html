@@ -101,7 +101,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" th:href="@{/tasks}">Add Task</a></li>
+                    <li><a class="" th:href="@{/task}">Add Task</a></li>
                     <li><a class="" th:href="@{/roles}">Role</a></li>
                     <li><a class="" th:href="@{/users}">User</a></li>
                 </ul>
@@ -146,15 +146,15 @@
                                 <th><i class="icon_cogs"></i> Action</th>
                             </tr>
                             <tr th:each="task:${tasks}">
-                                <td th:text="${task.taskName}">Firstname</td>
-                                <td th:text="${task.lastname}">Lastname</td>
-                                <td th:text="${user.username}">Username</td>
-                                <td><a  th:href="@{'/tasks/Edit/'+${user.id}}"
+                                <td th:text="${task.taskName}">Task Name</td>
+                                <td th:text="${task.taskDescription}">Details</td>
+                                <td th:text="${task.taskStatus}">Status</td>
+                                <td><a  th:href="@{'/tasks/Edit/'+${task.id}}"
                                         class="btn btn-default"><i class="icon_pencil-edit">
                                 </i>Manage Roles</a></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" id="editButton" th:href="@{/users/findById/(id=${user.id})}"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn btn-primary" id="editButton" th:href="@{/task/findById/(id=${task.id})}"><i class="icon_pencil-edit"></i></a>
                                         <a class="btn btn-success" id="detailsButton" th:href="@{/users/findById/(id=${user.id})}"><i class="icon_document_alt"></i></a>
                                         <a class="btn btn-danger" id="deleteButton" th:href="@{/users/delete/(id=${user.id})}"><i class="icon_close_alt2"></i></a>
                                     </div>
